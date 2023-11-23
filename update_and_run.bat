@@ -23,9 +23,11 @@ for /f "delims=" %%i in (%requirements_file%) do (
     if !errorlevel! neq 0 (
         pip install !library_name!
         if !errorlevel! neq 0 (
-            echo Pip died.
-            echo Check your python installation and make sure it's added to PATH.
+            echo Pip had a stroke.
+            echo Please check your python installation and make sure it's added to PATH.
         )
+    ) else (
+        echo !library_name! is installed.
     )
 )
 

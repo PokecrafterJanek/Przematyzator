@@ -1,6 +1,7 @@
 from pytube import YouTube
 import os
 import cv2
+import extract_text
 
 def download(video_url):
     output_folder = "files/temp/video"
@@ -24,6 +25,7 @@ def download(video_url):
     video_path = os.path.join(output_folder, 'video.mp4').replace("\\", "/")
 
     cut(video_path)
+
 
 def cut(video_path):
     cap = cv2.VideoCapture(video_path)
@@ -64,3 +66,5 @@ def cut(video_path):
     print("Frame extraction finished")
 
     cap.release()
+
+    extract_text.extract()
